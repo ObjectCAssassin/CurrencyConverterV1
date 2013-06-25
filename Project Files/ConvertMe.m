@@ -6,18 +6,16 @@
 //  Copyright (c) 2013 timmy. All rights reserved.
 //
 
+//testttt
 #import "ConvertMe.h"
 @implementation ConvertMe
 
 -(void) greeter
 {
     //Organize By Continent/Region
-    
-    //Europe
-    int Europe=2;
-    int Germany=3;
-    //India
     int India= 1;
+    int Europe=2;
+        int Canada=4;
     //Austrailia
     //int Austrailia=4;
     
@@ -32,21 +30,23 @@
     float Euros;
     float GermanEurostoAmericanDollars;
     
+    float canadianDollars;
+    float canadianDollarstoAmericanDollars;
+    
     for (int loop=1; loop>0; loop=loop+1)
     {
     //Add countries Here
-    NSLog(@"Choose Your Country\n1)India\n2)Europe\n3)Germany\nMore countries will be added soon!");
+    NSLog(@"Choose Your Country\n1)India\n2)Europe\n3)Germany\n4)Canada\nMore countries will be added soon!\n Note:  If you enter a number that is not listed, the program will not panic.  Just try again :)");
     scanf("%i",&userChoice);
     //Decide which country to use
-    if (userChoice==India) {
-        NSLog(@"Welcome my Indian Friend!");
-        NSLog(@"Amount in Rupees: ");
-        scanf("%f",&rupees);
-        rupeestoUSDollars=rupees*.017;
-        NSLog(@"%.2f is worth $%.2f U.S Dollars",rupees,rupeestoUSDollars);
+        if (userChoice==India) {
+            NSLog(@"Welcome my Indian Friend!");
+            NSLog(@"Amount in Rupees: ");
+            scanf("%f",&rupees);
+            rupeestoUSDollars=rupees*.017;
+            NSLog(@"%.2f Rupees is worth $%.2f U.S Dollars",rupees,rupeestoUSDollars);
     }
-    
-        if (userChoice==Europe) {
+        else if (userChoice==Europe) {
             NSLog(@"Welcome my European Friend!");
             NSLog(@"Amount in U.S Dollars");
             scanf("%f",&Dollars);
@@ -54,16 +54,23 @@
             NSLog(@"Euros: %.2f",AmericanDollarstoEuros);
         }
         
-        if (userChoice==Germany) {
-            NSLog(@"Welcome my German Friend!");
-            NSLog(@"Amount in Euros(EUR)");
-            scanf("%f",&Euros);
-            GermanEurostoAmericanDollars=Euros*1.31;
-            NSLog(@"%f is worth %.2f American Dollars.",Euros,GermanEurostoAmericanDollars);
+              
+      else  if (userChoice==Canada)
+        {
+            NSLog(@"Welcome my Canadian Friend!");
+            NSLog(@"Amount you have in Canadian Dollars: ");
+            scanf("%f", &canadianDollars);
+            canadianDollarstoAmericanDollars=canadianDollars*0.95;
+            NSLog(@"%.2f Candian Dollars is worth $%.2f",canadianDollars,canadianDollarstoAmericanDollars);
             
-        }       
+            
+        }
+            }
     }
-}
+
+
+
+
 
 
 @end
